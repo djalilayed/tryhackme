@@ -1,0 +1,13 @@
+
+import binascii
+
+input_filename = "protected_exported.bin"
+output_filename = "protected_data.kdbx"
+
+with open(input_filename, "r") as input_file, open(output_filename, "wb") as output_file:
+    
+    for line in input_file:
+        line = line.strip()
+        binary_data = binascii.unhexlify(line)
+        output_file.write(binary_data)
+
