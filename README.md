@@ -5,6 +5,12 @@ this collection of scripts I used on some TryHackMe rooms
 
 --
 
+YouTube video for Services room from TryHackMe
+
+https://youtu.be/CUdusKFM54U
+
+--
+
 YouTube video for Weaponizing Vulnerabilities room from TryHackMe
 
 https://youtu.be/9bl0u0W_U2w
