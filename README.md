@@ -5,6 +5,12 @@ this collection of scripts I used on some TryHackMe rooms
 
 --
 
+YouTube video for Capture! room from TryHackMe
+
+https://youtu.be/_AD-0fG1qJM
+
+--
+
 YouTube video for Services room from TryHackMe
 
 https://youtu.be/CUdusKFM54U
