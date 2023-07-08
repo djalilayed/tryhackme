@@ -5,6 +5,60 @@ this collection of scripts I used on some TryHackMe rooms
 
 --
 
+YouTube video for Snapped "Phish"-ing Line
+
+https://youtu.be/ZOTw6dv4T9w
+
+--
+
+YouTube video for Advanced ELK Queries
+
+https://youtu.be/fxXsqMYtu8w
+
+--
+
+YouTube video for Cat Pictures 2 
+
+https://youtu.be/hgvz8ZxY8Zc
+
+--
+
+YouTube video for CALDERA TryHackMe - Task 1 - 6
+
+https://youtu.be/CgojqDwRmlI
+
+--
+
+YouTube video for CALDERA - Case Study: Emulating APT41 - Task 7
+
+https://youtu.be/976Ynek-7Uw
+
+--
+
+YouTube video for Network Device Hardening
+
+https://youtu.be/EmiKMMFEIig
+
+--
+
+YouTube video for Anti-Reverse Engineering
+
+https://youtu.be/CIFYPGV-cHM
+
+--
+
+YouTube video for Threat Intelligence for SOC
+
+https://youtu.be/ET72bUE3IpM
+
+--
+
+YouTube video for Digital Forensics Case B4DM755
+
+https://youtu.be/n2kW0hRn4DU
+
+--
+
 YouTube video for Capture! room from TryHackMe
 
 https://youtu.be/_AD-0fG1qJM
