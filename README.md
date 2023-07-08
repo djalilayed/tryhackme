@@ -59,9 +59,21 @@ https://youtu.be/n2kW0hRn4DU
 
 --
 
-YouTube video for Capture! room from TryHackMe
+YouTube video for Digital Forensics Case B4DM755
 
-https://youtu.be/_AD-0fG1qJM
+https://youtu.be/n2kW0hRn4DU
+
+--
+
+YouTube video for Valley
+
+https://youtu.be/FQM2i491KCo
+
+--
+
+YouTube video for Weasel
+
+https://youtu.be/2Jv957vQhS4
 
 --
 
