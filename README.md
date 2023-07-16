@@ -5,6 +5,12 @@ this collection of scripts I used on some TryHackMe rooms
 
 --
 
+YouTube video for Red
+
+https://youtu.be/uFaTBYynOZc
+
+--
+
 YouTube video for Snapped "Phish"-ing Line
 
 https://youtu.be/ZOTw6dv4T9w
