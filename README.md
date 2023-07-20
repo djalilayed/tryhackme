@@ -5,6 +5,12 @@ this collection of scripts I used on some TryHackMe rooms
 
 --
 
+YouTube video for ParrotPost: Phishing Analysis
+
+https://youtu.be/I-dsjZ9rKw4
+
+--
+
 YouTube video for Red
 
 https://youtu.be/uFaTBYynOZc
