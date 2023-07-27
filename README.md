@@ -5,6 +5,12 @@ this collection of scripts I used on some TryHackMe rooms
 
 --
 
+YouTube video for Splunk: Exploring SPL
+
+https://youtu.be/Tig5GLzHK08
+
+--
+
 YouTube video for Trooper
 
 https://youtu.be/AjZK45hv8zw
