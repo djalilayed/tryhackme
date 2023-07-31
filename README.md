@@ -5,6 +5,12 @@ this collection of scripts I used on some TryHackMe rooms
 
 --
 
+YouTube video for Forgotten Implant
+
+https://youtu.be/zC77QhGfCIc
+
+--
+
 YouTube video for Splunk: Exploring SPL
 
 https://youtu.be/Tig5GLzHK08
