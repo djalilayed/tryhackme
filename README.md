@@ -1,9 +1,15 @@
-# tryhackme
-tryhame rooms walkthrough
+# tryhackme # ctf # ctf writeup
+tryhame rooms YouTube videos walkthrough
 
 this collection of scripts I used on some TryHackMe rooms
 
 --
+
+YouTube video for Traverse
+
+https://youtu.be/l4MynraEy_w
+
+---
 
 YouTube video for Forgotten Implant
 
