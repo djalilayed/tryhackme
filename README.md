@@ -4,6 +4,11 @@ tryhame rooms YouTube videos walkthrough
 this collection of scripts I used on some TryHackMe rooms
 
 --
+YouTube video for CVE-2023-38408 
+
+https://youtu.be/wZ9yx-dhzPY
+
+--
 
 YouTube video for Traverse
 
