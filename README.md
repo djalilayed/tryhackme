@@ -3,7 +3,39 @@ tryhame rooms YouTube videos walkthrough
 
 this collection of scripts I used on some TryHackMe rooms
 
+---
+YouTueb video for Lesson Learned? 
+
+https://youtu.be/tf560Q6n158
+
+---
+
+YouTube video for Identification & Scoping
+
+https://youtu.be/1hwLzsPlJy4
+
 --
+
+---
+YouTube video for Grep 
+
+https://youtu.be/0-e7RDv8tXI
+
+
+---
+YouTube video for Splunk: Dashboards and Reports 
+
+https://youtu.be/D3-O2VycHwo
+
+--
+
+---
+YouTube video for Threat Intel & Containment
+
+https://youtu.be/_CcQ4m_1z1s
+
+--
+
 YouTube video for CVE-2023-38408 
 
 https://youtu.be/wZ9yx-dhzPY
