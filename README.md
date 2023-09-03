@@ -4,7 +4,19 @@ tryhame rooms YouTube videos walkthrough
 this collection of scripts I used on some TryHackMe rooms
 
 ---
-YouTueb video for Lesson Learned? 
+
+YouTube video for Expose
+
+https://youtu.be/lDGY3hcpPzs
+
+---
+
+YouTube video for Advanced Static Analysis
+
+https://youtu.be/kujzZ42ztfo
+
+---
+YouTube video for Lesson Learned? 
 
 https://youtu.be/tf560Q6n158
 
