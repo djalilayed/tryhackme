@@ -5,6 +5,12 @@ this collection of scripts I used on some TryHackMe rooms
 
 ---
 
+YouTube video for Mother's Secret
+
+https://youtu.be/RLesJdXA7HI
+
+---
+
 YouTube video for Expose
 
 https://youtu.be/lDGY3hcpPzs
