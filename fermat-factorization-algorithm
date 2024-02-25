@@ -30,4 +30,12 @@ def factorize(n):
 
     return a + b, a - b
 
-print(factorize(105327569))
+#print(factorize(105327569))
+
+# print p, q and their diffrences:
+
+p, q = factorize(105327569)
+print(f"p: {p}")
+print(f"q: {q}")
+print(f"Difference (p - q): {p - q}")
+
