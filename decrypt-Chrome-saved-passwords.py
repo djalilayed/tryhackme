@@ -1,5 +1,6 @@
 # original https://www.hackthebox.com/blog/seized-ca-ctf-2022-forensics-writeup
 # small changes replacing action_url to origin_url and just check ciphertext is not empty
+# run on windows machine
 import os
 import re
 import sys
