@@ -5,3 +5,5 @@ process.py: this pythons script read proc/{pid}/cmdline and check all possible p
 shell.rb: this is simple ruby reverse shell
 
 read_root.rb: this simple ruby script to read file root.txt
+
+Airplane tryhackme room YouTube video walk through: https://youtu.be/03HF21vMdXs
