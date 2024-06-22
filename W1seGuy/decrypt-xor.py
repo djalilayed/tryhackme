@@ -1,5 +1,6 @@
 # usage: decrypt-xor.py -e 'xor encoded text'
 # this script with help of ChatGPT and Gemini
+# TryHackMe room W1seGuy https://tryhackme.com/r/room/w1seguy
 
 import binascii
 import string
