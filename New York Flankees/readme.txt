@@ -1,3 +1,5 @@
+YouTube video walk through: https://www.youtube.com/watch?v=0laLRuQ1MAE
+
 commands used for docker escape on TryHackMe room New York Flankees https://tryhackme.com/r/room/thenewyorkflankees
 
 ls -l /var/run/docker.sock
