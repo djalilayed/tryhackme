@@ -1,6 +1,7 @@
 # script with assistance from ChatGPT
 # python script.py -url http://10.10.126.24 -max 10 -u john -session 8sgbbd25ak5tvmmc0f99mae3s
 # used on TryHackMe room NoSQL Injection https://tryhackme.com/r/room/nosqlinjectiontutorial
+# youtube video walk through: https://youtu.be/4TJlREKMZMk
 
 import requests
 import argparse
