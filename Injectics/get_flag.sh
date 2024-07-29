@@ -1,6 +1,6 @@
 #!/bin/bash
 # List the contents of the /flag directory
-# tryhackme room Injectics / assistance by ChatGPT
+# tryhackme room Injectics / assistance by ChatGPT https://tryhackme.com/r/room/injectics
 flag_dir="/var/www/html/flags"
 flag_contents=$(ls $flag_dir)
 
