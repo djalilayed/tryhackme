@@ -5,6 +5,12 @@ this collection of scripts I used on some TryHackMe rooms
 
 ---
 
+YouTube video for Hammer
+
+https://youtu.be/T_F44rHKgZY
+
+---
+
 YouTube video for Mother's Secret
 
 https://youtu.be/RLesJdXA7HI
