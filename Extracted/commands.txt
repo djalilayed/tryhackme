@@ -21,4 +21,9 @@ sudo snap install john-the-ripper
 
 sudo apt install hashcat
 
-  
+Donet installation ubuntu
+
+sudo add-apt-repository ppa:dotnet/backports (this depend of your buntu version check: https://learn.microsoft.com/en-us/dotnet/core/install/linux-ubuntu-install?tabs=dotnet8&pivots=os-linux-ubuntu-2204 and https://learn.microsoft.com/en-us/dotnet/core/install/linux-ubuntu#ubuntu-net-backports-package-repository)
+
+sudo apt install dotnet-runtime-7.0
+sudo apt install dotnet-sdk-7.0
