@@ -1,0 +1,24 @@
+these commands used on TryHackMe room  Extracted https://tryhackme.com/r/room/extractedroom
+
+video walk through: https://youtu.be/6JPFjUVX7e4
+
+tshark -C tryhackme -r traffic.pcapng -Y "ip.src==10.10.45.95 && tcp.srcport==50357 && ip.dst==10.10.94.106 && tcp.dstport==1337" -T fields -e data.data | tr -d '\n' | xxd -r -p > dump_file_process.raw
+
+tshark -C tryhackme -r traffic.pcapng -Y "ip.src==10.10.45.95 && tcp.srcport==50358 && ip.dst==10.10.94.106 && tcp.dstport==1338" -T fields -e data.data | tr -d '\n' | xxd -r -p > dump_file_database.raw
+
+sudo apt install keepassx
+
+
+sudo apt  install cargo
+cargo install keepass-dump-extractor
+
+warning: be sure to add `/home/tryhackme/.cargo/bin` to your PATH to be able to run the installed binaries
+
+export PATH="$HOME/.cargo/bin:$PATH"
+
+
+sudo snap install john-the-ripper
+
+sudo apt install hashcat
+
+  
