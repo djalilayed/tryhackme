@@ -1,0 +1,122 @@
+List of rooms and my YouTube videos walk through for Cyber Security 101, new TryHackMe path: Are you new to cyber security and not sure where to start? This pathway will help you acquire the core skills required to start your cyber security journey.
+
+Full Video list link: https://www.youtube.com/playlist?list=PLrY_AbzZGqt_mmzHIkOq8haGgIeSI-MhC
+
+Section 1
+
+Start Your Cyber Security Journey
+
+Room TryWinMe: Think Cyber Monopoly
+Room Offensive Security Intro
+Room Defensive Security Intro
+Room Search Skills
+
+Section 2
+
+Linux Fundamentals
+
+Room Linux Fundamentals Part 1
+Room Linux Fundamentals Part 2
+Room Linux Fundamentals Part 3
+
+Section 3
+
+Windows and AD Fundamentals
+Room Windows Fundamentals 1
+Room Windows Fundamentals 2
+Room Windows Fundamentals 3
+Room Active Directory Basics
+
+Section 4
+
+Command Line
+Room Windows Command Line: https://youtu.be/7ZQmzydxTB8
+Room Windows PowerShell: https://youtu.be/VRav0fRuL6o
+Room Linux Shells: https://youtu.be/62x3JqxuWes
+
+Section 5
+
+Networking
+
+Room Networking Concepts: https://youtu.be/EHiZER8pzmM
+Room Networking Essentials: https://youtu.be/ov33lp110Lk
+Room Networking Core Protocols
+Room Networking Secure Protocols: https://youtu.be/HJnoFotIRJw
+Room Wireshark: The Basics
+Room Tcpdump: The Basics
+Room Nmap: The Basics: https://youtu.be/yWc9tWj0onU
+
+Section 6
+
+Cryptography
+
+Room Cryptography Basics: https://youtu.be/AN_xrPEgyGg
+Room Public Key Cryptography Basics: https://youtu.be/mI4sHcqrLYY
+Room Hashing Basics: https://youtu.be/De2b3ZgqXXw
+Room John the Ripper: The Basics
+
+Section 7
+
+Exploitation Basics
+
+Room Moniker Link (CVE-2024-21413)
+Room Metasploit: Introduction 
+Room Metasploit: Exploitation
+Room Metasploit: Meterpreter
+Room Blue
+
+Section 8
+
+Web Hacking
+
+Room Web Application Basics: https://youtu.be/QF-NGSeLwHY
+Room JavaScript Essentials: https://youtu.be/8SmJNWiMouo
+Room SQL Fundamentals: https://youtu.be/5n6ytmnIEoE
+Room Burp Suite: The Basics
+Room OWASP Top 10 - 2021: https://www.youtube.com/watch?v=aFdv9vSg-V4
+
+Section 9
+
+Offensive Security Tooling
+
+Room Hydra
+Room Gobuster: The Basics: https://youtu.be/be7S0UlgfG8
+Room Shells Overview: https://youtu.be/nSv589s4Fg0
+Room SQLMap: The Basics: https://youtu.be/PZDELLx_m1w
+
+Section 10
+
+Defensive Security
+
+Room Defensive Security Intro
+Room SOC Fundamentals: https://youtu.be/XZHJphBJN_U
+Room Digital Forensics Fundamentals
+Room Incident Response Fundamentals: https://youtu.be/Ffi8CNvAInc
+Room Logs Fundamentals: https://youtu.be/XGLXPyt_4Qc
+
+Section 11
+
+Security Solutions
+
+Room Introduction to SIEM
+Room Firewall Fundamentals: https://youtu.be/ZtM3OH9KaXI
+Room IDS Fundamentals: https://youtu.be/MR1wGHbuap4
+Room Vulnerability Scanner Overview: https://youtu.be/uwDuN7vFC88
+
+Section 12
+
+Defensive Security Tooling
+
+Room CyberChef: The BasicsL: https://youtu.be/ppENDFGq76E
+Room CAPA: The Basics
+Room REMnux: Getting Started: https://youtu.be/XkTHo99AoMQ
+Room FlareVM: Arsenal of Tools: https://youtu.be/1Q0CuI9_474
+
+Section 13
+
+Build Your Cyber Security Career
+
+Room Security Principles
+Room Careers in Cyber
+Room Training Impact on Teams
+
