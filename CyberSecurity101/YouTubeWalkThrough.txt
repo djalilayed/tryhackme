@@ -53,7 +53,7 @@ Cryptography
 Room Cryptography Basics: https://youtu.be/AN_xrPEgyGg
 Room Public Key Cryptography Basics: https://youtu.be/mI4sHcqrLYY
 Room Hashing Basics: https://youtu.be/De2b3ZgqXXw
-Room John the Ripper: The Basics
+Room John the Ripper: The Basics: https://youtu.be/MZuzwBDNPQw
 
 Section 7
 
@@ -90,7 +90,7 @@ Defensive Security
 
 Room Defensive Security Intro
 Room SOC Fundamentals: https://youtu.be/XZHJphBJN_U
-Room Digital Forensics Fundamentals
+Room Digital Forensics Fundamentals: https://youtu.be/3uoXRXcdiPs
 Room Incident Response Fundamentals: https://youtu.be/Ffi8CNvAInc
 Room Logs Fundamentals: https://youtu.be/XGLXPyt_4Qc
 
