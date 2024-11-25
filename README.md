@@ -5,6 +5,12 @@ this collection of scripts I used on some TryHackMe rooms
 
 ---
 
+YouTube video for Lookup
+
+[https://youtu.be/T_F44rHKgZY](https://youtu.be/ebICunwZK2Y)
+
+---
+
 YouTube video for Hammer
 
 https://youtu.be/T_F44rHKgZY
