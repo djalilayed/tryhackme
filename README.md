@@ -1,7 +1,7 @@
 # tryhackme # ctf # ctf writeup
-tryhame rooms YouTube videos walkthrough
+TryHackMe rooms YouTube videos walkthrough
 
-this collection of scripts I used on some TryHackMe rooms
+These YouTube video for my walk through write up for TryHackMe rooms
 
 ---
 
