@@ -5,31 +5,31 @@ These YouTube video for my walk through write up for TryHackMe rooms
 
 ---
 
-YouTube video for Lookup
+YouTube video for TryHackMe Lookup
 
 [https://youtu.be/T_F44rHKgZY](https://youtu.be/ebICunwZK2Y)
 
 ---
 
-YouTube video for Hammer
+YouTube video for TryHackMe Hammer
 
 https://youtu.be/T_F44rHKgZY
 
 ---
 
-YouTube video for Mother's Secret
+YouTube video for TryHackMe Mother's Secret
 
 https://youtu.be/RLesJdXA7HI
 
 ---
 
-YouTube video for Expose
+YouTube video for TryHackMe Expose
 
 https://youtu.be/lDGY3hcpPzs
 
 ---
 
-YouTube video for Advanced Static Analysis
+YouTube video for TryHackMe Advanced Static Analysis
 
 https://youtu.be/kujzZ42ztfo
 
