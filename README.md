@@ -5,6 +5,12 @@ These YouTube video for my walk through write up for TryHackMe rooms
 
 ---
 
+YouTube video for TryHackMe Incident Response Process
+
+https://youtu.be/J6hDCZ5pefg
+
+---
+
 YouTube video for TryHackMe Lookup
 
 [https://youtu.be/T_F44rHKgZY](https://youtu.be/ebICunwZK2Y)
