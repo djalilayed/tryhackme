@@ -4,6 +4,10 @@ TryHackMe rooms YouTube videos walkthrough
 These YouTube video for my walk through write up for TryHackMe rooms
 
 ---
+YouTube video for TryHackMe FAT32 Analysis
+
+https://youtu.be/0jMoPhiNeVk
+----
 
 YouTube video for TryHackMe Incident Response Process
 
