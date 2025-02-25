@@ -4,6 +4,12 @@ TryHackMe rooms YouTube videos walkthrough
 These YouTube video for my walk through write up for TryHackMe rooms
 
 ---
+
+YouTube video for TryHackMe Rabbit Store
+
+https://youtu.be/BLEUNfBgNAg
+
+---
 YouTube video for TryHackMe FAT32 Analysis
 
 https://youtu.be/0jMoPhiNeVk
