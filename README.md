@@ -7,7 +7,7 @@ These YouTube video for my walk through write up for TryHackMe rooms
 
 YouTube video for TryHackme Billing
 
-https://youtu.be/p2ozqA4nbLg
+[https://youtu.be/p2ozqA4nbLg](https://youtu.be/p2ozqA4nbLg)
 ---
 
 YouTube video for TryHackMe Rabbit Store
