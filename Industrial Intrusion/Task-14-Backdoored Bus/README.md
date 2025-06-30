@@ -45,4 +45,3 @@ grep -R -n -E --color=always \
   
   /usr/local/lib/python*
   
-           CTF,DockerSecurity,Modbus,CyberSecurity,THM,TryHackMe,CTFWalkthrough,PythonSecurity,Backdoor,StaticAnalysis,CyberSec,HackingChallenge,DockerForensics,OSCommandInjection,InfoSec
