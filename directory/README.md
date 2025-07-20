@@ -54,10 +54,14 @@ kerberos.msg_type == 11
 tshark -r capture.pcap -Y "kerberos.msg_type=10" -T fields -e kerberos.CNameString | sort -u | uniq
 
 pip install pycryptodom
+
+
 grep -oP '<rsp:Arguments>\K[^<]*' decrypted_output.txt | base64 -d
 
 
- grep -zoP '<S N="V">\K[\s\S]*?(?=<\/S>)' base64_decrypted.txt
+
+grep -zoP '<S N="V">\K[\s\S]*?(?=<\/S>)' base64_decrypted.txt
+ 
 grep -oP '<rsp:Arguments>\K[^<]*' decrypted_output.txt | base64 -d
 
 echo '$krb5asrep$23$larry.doe@DIRECTORY.THM:f8716efbaa9[READACTED]a469f' > hash.txt
@@ -77,9 +81,12 @@ Remaining ciphertext after the $:
 
 pip install pycryptodome pyshark cryptography
 
- python3 c.py -p 'userpassword' capture.pcap > decrypt_directory.txt
+
+python3 c.py -p 'userpassword' capture.pcap > decrypt_directory.txt
+
 
 grep -oP 'AAAAAA[A-Za-z0-9+/]*={0,2}' decrypt_diretory.txt | base64 -d > attacker_commands.txt
+
 
 grep -zoP '<S N="V">\K[\s\S]*?(?=<\/S>)' attacker_commands.txt
 
