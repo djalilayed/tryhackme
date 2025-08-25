@@ -1,4 +1,6 @@
 # script provided by 0day https://x.com/0dayCTF
+# userd on tryhackme room https://tryhackme.com/room/extract
+# youtube video walk through: https://youtu.be/fM9EisT6s54
 
 python3 - <<'PY'
 import urllib.parse, sys
