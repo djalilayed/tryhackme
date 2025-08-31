@@ -1,4 +1,5 @@
 # for tryhackme room Voyage https://tryhackme.com/room/voyage
+# Youtube video walk through: https://youtu.be/vB2KG0V-oc0
 
 Joomla Version:
 
