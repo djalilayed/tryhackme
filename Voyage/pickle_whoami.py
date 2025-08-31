@@ -1,5 +1,6 @@
 # for tryhackme room Voyage https://tryhackme.com/room/voyage
 # run below on terminal
+# Youtube video walk through: https://youtu.be/vB2KG0V-oc0
 
 python3 - <<'PY'
 import pickle, binascii, subprocess
