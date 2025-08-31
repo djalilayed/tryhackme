@@ -6,6 +6,7 @@ Joomla Version:
 https://github.com/OWASP/joomscan
 
 http[:]//10[.]10[.]113[.]54/README.txt
+
 http[:]//10[.]10[.]113[.]54/administrator/manifests/files/joomla.xml
 
 CVE-2023-23752
