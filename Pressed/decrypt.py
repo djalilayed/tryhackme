@@ -1,5 +1,6 @@
 # script by Gemeni
 # script for tryhackme room Pressed https://tryhackme.com/room/pressedroom
+# YouTube Video Walk Through: https://youtu.be/CGBwiBXQNq4
 # script decrypt aes encrypted file exported from Wireshark
 # you need to update below the key an div
 
