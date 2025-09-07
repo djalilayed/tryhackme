@@ -2,7 +2,7 @@
 
 ### TryHackMe Pressed YouTube Video Walk Through: 
 
-[TryHackMe Pressed Full Walkthrough 2025](#)
+[TryHackMe Pressed Full Walkthrough 2025](https://youtu.be/CGBwiBXQNq4)
 
 **Below commands used on TryHackMe room Pressed YouTube video walk through:**
 
