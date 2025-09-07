@@ -33,3 +33,4 @@ Using openssl to decrypt aes
 openssl enc -aes-256-cbc -d -K 726849315961******149766c387073364d4a6a -iv 70457738****34736a -in cmd.bin -out cmd.txt
 ```
 
+![Ghidra Main Function Showcasing the Key](https://github.com/djalilayed/tryhackme/blob/main/Pressed/Ghidra_main.png)
