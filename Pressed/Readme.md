@@ -4,7 +4,7 @@
 
 [TryHackMe Pressed Full Walkthrough 2025](#)
 
-**Below commands used on TryHackMe room Pressed YouTube video walk through: **
+**Below commands used on TryHackMe room Pressed YouTube video walk through:**
 
 ```
 cat sheet.txt | base64 -d > sheet.ods
