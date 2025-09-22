@@ -1,5 +1,8 @@
 ## TryHackMe room Sequence https://tryhackme.com/room/sequence
 
+![TryHackMe room Sequence](https://github.com/djalilayed/tryhackme/blob/main/Sequence/Sequence.png)
+
+
 ### TryHackMe Sequence YouTube Video Walk Through: 
 
 [TryHackMe Sequence - Full Walkthrough 2025](https://youtu.be/looyfVGX_yU)
