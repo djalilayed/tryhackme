@@ -2,7 +2,7 @@
 
 ## Task: What is the Labyrinth flag?
 ### YouTube video walkthrough: 
-[YouTube video 1]((https://youtu.be/HdeJ_-U6RZI))
+[YouTube video 1](https://youtu.be/HdeJ_-U6RZI)
 
 ### Coomand used on the video:
 
