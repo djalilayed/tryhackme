@@ -1,9 +1,9 @@
-## TryHackMe room Juice [https://tryhackme.com/room/juicy](https://tryhackme.com/room/juicy)
+## TryHackMe room Juicy [https://tryhackme.com/room/juicy](https://tryhackme.com/room/juicy)
 
-![TryHackMe room Sequence](https://github.com/djalilayed/tryhackme/blob/main/Sequence/Sequence.png)
+![TryHackMe room Juicy](https://github.com/djalilayed/tryhackme/blob/main/Juicy/Juicy.png)
 
 
-### TryHackMe Juice YouTube Video Walk Through: 
+### TryHackMe Juicy YouTube Video Walk Through: 
 
 [TryHackMe Sequence - Full Walkthrough 2025](https://youtu.be/xeGi7uXCt68)
 
