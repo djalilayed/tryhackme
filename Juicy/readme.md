@@ -9,8 +9,6 @@
 
 **Below commands used on TryHackMe room Juice YouTube video walk through:**
 
-### Stealing mod cookie and send it to python server
-
 ```
 create an HTML img tag where the src URL http://10.80.114.71:8000/
 ```
