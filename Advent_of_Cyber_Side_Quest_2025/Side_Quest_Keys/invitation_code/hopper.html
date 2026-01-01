@@ -1,0 +1,116 @@
+<!-- 
+html page to get hooper invitaion code.
+this for tryhackme inviation code: https://static-labs.tryhackme.cloud/apps/hoppers-invitation/
+Hoppers Origins
+YouTube Video walk through: https://youtu.be/guQ3MQmkUTg
+
+-->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hopper's Origins - Local</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #1a1a2e;
+      color: #eee;
+      padding: 40px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    input, button {
+      padding: 10px;
+      margin: 10px 0;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    button {
+      background: #00ff88;
+      color: #000;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    button:hover {
+      background: #00dd77;
+    }
+    #result {
+      margin-top: 20px;
+      padding: 20px;
+      background: #0a3d2e;
+      border: 2px solid #00ff88;
+      border-radius: 8px;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+  </style>
+</head>
+<body>
+  <h1>Hopper's Origins - Local Decryption</h1>
+  
+  <label>Invitation Code:</label>
+  <input type="text" id="key" placeholder="Enter your key here...">
+  
+  <label>Encrypted Content:</label>
+  <textarea id="encrypted" rows="10" placeholder="Paste the encrypted content from hopper-origins.txt here..."></textarea>
+  
+  <button onclick="decrypt()">Decrypt</button>
+  
+  <div id="result"></div>
+
+  <script>
+    // Key derivation function
+    async function Md(e, t) {
+      const r = new TextEncoder().encode(e);
+      const l = await crypto.subtle.importKey("raw", r, {name: "PBKDF2"}, false, ["deriveBits", "deriveKey"]);
+      return crypto.subtle.deriveKey(
+        {name: "PBKDF2", salt: t, iterations: 100000, hash: "SHA-256"},
+        l,
+        {name: "AES-GCM", length: 256},
+        true,
+        ["encrypt", "decrypt"]
+      );
+    }
+
+    // Decryption function
+    async function Id(e, t) {
+      const n = Uint8Array.from(atob(e), m => m.charCodeAt(0));
+      const r = n.slice(0, 16);   // salt
+      const l = n.slice(16, 28);  // IV
+      const u = n.slice(28, 44);  // auth tag
+      const o = n.slice(44);      // ciphertext
+      
+      const i = await Md(t, r);
+      const s = new Uint8Array(o.length + u.length);
+      s.set(o);
+      s.set(u, o.length);
+      
+      const f = await crypto.subtle.decrypt({name: "AES-GCM", iv: l}, i, s);
+      return new TextDecoder().decode(f);
+    }
+
+    // Decrypt button handler
+    async function decrypt() {
+      const key = document.getElementById('key').value;
+      const encrypted = document.getElementById('encrypted').value;
+      const resultDiv = document.getElementById('result');
+      
+      if (!key || !encrypted) {
+        resultDiv.innerHTML = '❌ Please enter both key and encrypted content';
+        return;
+      }
+      
+      resultDiv.innerHTML = '⏳ Decrypting...';
+      
+      try {
+        const decrypted = await Id(encrypted.trim(), key);
+        resultDiv.innerHTML = '✅ DECRYPTED:\n\n' + decrypted;
+      } catch (error) {
+        resultDiv.innerHTML = '❌ Decryption failed: ' + error.message;
+      }
+    }
+  </script>
+</body>
+</html>
