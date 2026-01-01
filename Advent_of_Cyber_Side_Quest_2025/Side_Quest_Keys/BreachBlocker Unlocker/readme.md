@@ -2,6 +2,8 @@
 
 [BreachBlocker Unlocker Side Quest Access key - Full Walkthrough 2025  - Full Walkthrough 2025]()
 
+Zip file password: CanYouREM3?
+
 ## Cyberchef recipe to decode the script
 
 ```
