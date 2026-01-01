@@ -1,4 +1,5 @@
 # script by ChatGPT
+# python3 image_decode.py 5ed5961c6276df568891c3ea-1765955075920.png -v -o sq4_key.png
 # script to reverse image encoding.
 # script fot getting key for tryhackme room Carrotbane of My Existence Side Quest
 # YouTube video: https://youtu.be/8OQX9d6igKA
