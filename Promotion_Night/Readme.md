@@ -3,6 +3,8 @@ YouTube video walk through: https://youtu.be/iq41S-HWBeE
 
 **Below commands used on TryHackMe room Promotion Night First Shift CTF YouTube video walk through:**
 
+Below query is based on initial query shared by user Ph1sherman at TryHackMe discord
+
 ```
 index=* sourcetype="wineventlog"  EventCode=4104
 | rex field=_raw "Creating Scriptblock text \((?<part>\d+) of (?<total>\d+)\):"
