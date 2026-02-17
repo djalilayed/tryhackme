@@ -1,5 +1,7 @@
 ## Love at First Breach 2026 - Advanced Track
 ### Cupid Cards
+# YouTube video walk through: https://youtu.be/k6-5rF1tz_U
+
 
 ```
 x;id>cards/id.txt;#.png
