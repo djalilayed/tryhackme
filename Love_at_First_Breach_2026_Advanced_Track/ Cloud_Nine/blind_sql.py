@@ -1,3 +1,4 @@
+# On TryHackMe Attackbox use python3.9 blind_sql.py
 # script by Gemini Pro
 # tryhackme room Cloud Nine https://tryhackme.com/room/lafbctf2026-advanced
 # Youtube video walk through: https://youtu.be/nhOOzwlJ91M
