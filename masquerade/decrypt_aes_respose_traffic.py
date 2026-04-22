@@ -1,0 +1,51 @@
+# script by Gemini
+# script used on TryHackMe room Masquerade https://tryhackme.com/room/masquerade
+# script for client response traffic
+# YouTube video walk through: https://youtu.be/YEUJXAr0tWQ
+# replace cipher_string with value of EncryptionKey
+
+import base64
+import hashlib
+from Crypto.Cipher import AES
+from Crypto.Util.Padding import unpad
+
+cipher_string = "*****EncryptionKey*****"
+input_file = "guid_only.txt"
+
+def fix_base64_padding(data):
+    # Appends '=' characters until the length is a multiple of 4
+    return data + b'=' * (-len(data) % 4)
+
+def decrypt_c2_payload(b64_payload):
+    aes_key = hashlib.sha256(cipher_string.encode('utf-8')).digest()
+
+    # Step 2: Unpack the double Base64 encoding with padding fixes
+    first_decode = base64.b64decode(b64_payload)
+    
+    # Apply the padding fix to the intermediate byte string
+    padded_first_decode = fix_base64_padding(first_decode)
+    
+    second_decode = base64.b64decode(padded_first_decode)
+
+    # Step 3: Extract the IV and the Ciphertext
+    iv = second_decode[:16]
+    ciphertext = second_decode[16:]
+
+    # Step 4: Initialize AES in CBC mode and decrypt
+    cipher = AES.new(aes_key, AES.MODE_CBC, iv)
+    
+    try:
+        decrypted_bytes = unpad(cipher.decrypt(ciphertext), AES.block_size)
+        return decrypted_bytes.decode('utf-8')
+    except Exception as e:
+        return f"Decryption failed: {e}"
+
+if __name__ == "__main__":
+    with open(input_file, "r", encoding="utf-8") as infile:
+        for line_number, line in enumerate(infile, start=1):
+            payload_b64 = line.strip()
+            if not payload_b64:
+                continue
+
+            result = decrypt_c2_payload(payload_b64)
+            print(f"[+] Line {line_number} Decrypted Plaintext:\n{result}\n")
