@@ -1,4 +1,4 @@
-# script by Gemini
+# script by Gemini and ChatGPT
 # script used on TryHackMe room Masquerade https://tryhackme.com/room/masquerade
 # script for client response traffic
 # YouTube video walk through: https://youtu.be/YEUJXAr0tWQ
